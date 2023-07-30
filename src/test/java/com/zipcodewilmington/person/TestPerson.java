@@ -1,98 +1,86 @@
-package com.zipcodewilmington.person;
+public class Person {
+    private String name;
+    private int age;
+    private String favColor;
+    private String nickname;
 
-import org.junit.Assert;
-import org.junit.Test;
-
-/**
- * Created by leon on 2/12/18.
- */
-public class TestPerson {
-    @Test
-    public void testDefaultConstructor() {
-        // Given
-        String expectedName = "";
-        Integer expectedAge = Integer.MAX_VALUE;
-
-        // When
-        Person person = new Person();
-
-        // Then
-        String actualName = person.getName();
-        Integer actualAge = person.getAge();
-
-        Assert.assertEquals(expectedName, actualName);
-        Assert.assertEquals(expectedAge, actualAge);
+    public String getFavColor() {
+        return favColor;
     }
 
-    @Test
-    public void testConstructorWithName() {
-        // Given
-        String expected = "Leon";
-
-        // When
-        Person person = new Person(expected);
-
-        // Then
-        String actual = person.getName();
-        Assert.assertEquals(expected, actual);
+    public String getNickname() {
+        return nickname;
     }
 
-    @Test
-    public void testConstructorWithAge() {
-        // Given
-        Integer expected = 5;
-
-        // When
-        Person person = new Person(expected);
-
-        // Then
-        Integer actual = person.getAge();
-        Assert.assertEquals(expected, actual);
+    public int getFavoriteNum() {
+        return favoriteNum;
     }
 
-
-    @Test
-    public void testConstructorWithNameAndAge() {
-        // Given
-        Integer expectedAge = 5;
-        String expectedName = "Leon";
-
-        // When
-        Person person = new Person(expectedName, expectedAge);
-
-        // Then
-        Integer actualAge = person.getAge();
-        String actualName = person.getName();
-
-        Assert.assertEquals(expectedAge, actualAge);
-        Assert.assertEquals(expectedName, actualName);
+    public boolean isAlive() {
+        return isAlive;
     }
 
-    @Test
-    public void testSetName() {
-        // Given
-        Person person = new Person();
-        String expected = "Leon";
-
-        // When
-        person.setName(expected);
-        String actual = person.getName();
-
-        // Then
-        Assert.assertEquals(expected, actual);
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    @Test
-    public void testSetAge() {
-        // Given
-        Person person = new Person();
-        Integer expected = 5;
+    private int favoriteNum;
+    private boolean isAlive;
 
-        // When
-        person.setAge(expected);
+    public void setFavColor(String favColor) {
+        this.favColor = favColor;
+    }
 
-        // Then
-        Integer actual = person.getAge();
-        Assert.assertEquals(expected, actual);
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public void setFavoriteNum(int favoriteNum) {
+        this.favoriteNum = favoriteNum;
+    }
+
+    public void setAlive(boolean alive) {
+        isAlive = alive;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    private String phoneNumber;
+    public Person() {
+        this.name = "";
+        this.age = Integer.MAX_VALUE;
+    }
+
+    public Person(int age) {
+        this.age = age;
+    }
+
+    public Person(String name) {
+        this.name = name;
+    }
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getName() {
+        return null;
+        return name;
+    }
+
+    public Integer getAge() {
+        return null;
+        return age;
     }
 }
